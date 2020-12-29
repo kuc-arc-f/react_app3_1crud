@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 //import LibTask from '../../libs/LibTask';
- 
+import firebase from 'firebase'
 //
 class Test extends Component {
     constructor(props){
@@ -12,11 +12,23 @@ class Test extends Component {
         this.db = null
     }
     componentDidMount(){
+        this.procLogout()
     }
     handleClick(){
         console.log("#-handleClick")
 //        console.log( this.state )
     }
+    procLogout() {
+//        console.log('#users-Logout')
+        var self = this
+        firebase.auth().signOut().then(function() {
+            console.log('#sign-out-OK');
+            alert("Complete, Logout")
+            self.props.history.push("/");
+        }).catch(function(error) {
+            console.log(error);
+        })            
+    }  
     render() {
         return (
         <div className="container">

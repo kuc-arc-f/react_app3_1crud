@@ -1,8 +1,7 @@
 
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-// import LibTask from '../../libs/LibTask';
- 
+//import firebase from 'firebase'
 //
 class Test extends Component {
     constructor(props){
@@ -12,6 +11,16 @@ class Test extends Component {
         this.db = null
     }
     componentDidMount(){
+        this.check_auth()
+    }
+    async check_auth(){
+        try {
+//            var valid= await LibAuth.valid_auth(firebase)
+//console.log("#valid :" , valid )
+        } catch (err) {
+            console.error(`Error: ${JSON.stringify(err)}`)
+        }     
+
     }
     handleClick(){
 console.log("#-handleClick")
