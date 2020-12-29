@@ -50,6 +50,7 @@ yarn build
 ***
 ### Blog :
 
+https://note.com/knaka0209/n/n47ef057c397e
 
 ***
 
